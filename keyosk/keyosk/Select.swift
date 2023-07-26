@@ -8,23 +8,20 @@
 import Foundation
 
 class Select{
-    func numSelect() -> Int{
-        print("")
-        print("원하시는 메뉴를 숫자로 입력해주세요")
+    func numSelect(_ num: Int) -> Int{
+        print("\n숫자를 입력해주세요")
+        let range = 1...num
         var n: Int = Int(readLine()!) ?? 404
         
-        // 에러코드가 뜨지 않는 경우 함수 종료되며 n값 리턴
-        if n != 404 {
-            return n
-        }
-        
         // 에러코드가 뜨는 경우 맞는 값이 입력될 때 까지 반복
-        while n == 404 {
-            print("잘못된 값이 입력 됐습니다")
-            print("숫자만 다시 입력 해주세요")
+        while range.contains(n) == false {
+            print("""
+                  잘못된 값이 입력 됐습니다.
+                  올바른 숫자를 다시 입력하세요.
+            """)
             n = Int(readLine()!) ?? 404
+            if range.contains(n) == true {return n}
         }
-        
         return n
     }
 }

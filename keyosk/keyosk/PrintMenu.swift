@@ -10,11 +10,8 @@ import Foundation
 class PrintMenu {
     
     func printMenu(_ menus: [String]) {
-        
-        for menu in menus {
-            print(menu)
+        for index in 0..<menus.count {
+            print("\(index + 1). \(menus[index])")
         }
-        
-        
     }
 }
