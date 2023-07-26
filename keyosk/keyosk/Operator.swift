@@ -16,6 +16,8 @@ enum Set{
     
     // 피클 & 소스 메뉴
     case pikkleM, pikkleL, garlicDip, hotSauce
+    
+    // 음료 메뉴
 
 }
 

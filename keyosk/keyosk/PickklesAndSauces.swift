@@ -46,7 +46,7 @@ class PikklesAndSauces {
         let cartAddName = menuName[numChoice - 1]
         
         print("\n\n\n-----------------------------------------------------")
-        print("\n[ A D D  T O  C A R T ]")
+        print("\n[ A D D  T O  C A R T ]\n")
         
         print("\(cartAddName)를 몇 개 구매하시겠습니까?")
         let cartAddCount: Int = instances.selecting.numSelect(999)//stock

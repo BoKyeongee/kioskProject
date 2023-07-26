@@ -9,8 +9,7 @@ import Foundation
 
 class Drinks {
     func drink() {
-        print("음료 메뉴 화면입니다")
-        return
+        print("음료 메뉴 입니다.")
+    return
     }
-    
 }

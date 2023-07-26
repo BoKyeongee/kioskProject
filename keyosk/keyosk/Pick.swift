@@ -8,7 +8,7 @@
 import Foundation
 
 class Pick {
-    let menus: [String] = ["  P I Z Z A ","  P A S T A ","  S I D E","  D R I N K ","  P I K K L E  & S A U C E","  H O M E","  E X I T"]
+    let menus: [String] = ["P I Z Z A ","P A S T A ","S I D E","D R I N K ","P I K K L E  & S A U C E","H O M E","E X I T"]
     
     let numset: [Int: Set] = [
         1 : .pizza,
