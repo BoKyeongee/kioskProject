@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F2E31BD2A6F692A00DF4984 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2E31BC2A6F692A00DF4984 /* main.swift */; };
+		56083DFF2A71090100904A19 /* Buy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56083DFE2A71090100904A19 /* Buy.swift */; };
 		56CE62F72A6FF0C8007AAC9F /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE62F62A6FF0C8007AAC9F /* Menu.swift */; };
 		56CE62F92A6FF0CF007AAC9F /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE62F82A6FF0CF007AAC9F /* SideMenu.swift */; };
 		56CE62FF2A70EC64007AAC9F /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CE62FE2A70EC64007AAC9F /* Basket.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		1F2E31B92A6F692A00DF4984 /* team4work */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = team4work; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F2E31BC2A6F692A00DF4984 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		56083DFE2A71090100904A19 /* Buy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buy.swift; sourceTree = "<group>"; };
 		56CE62F62A6FF0C8007AAC9F /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		56CE62F82A6FF0CF007AAC9F /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		56CE62FE2A70EC64007AAC9F /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				56CE62F62A6FF0C8007AAC9F /* Menu.swift */,
 				56CE62F82A6FF0CF007AAC9F /* SideMenu.swift */,
 				56CE62FE2A70EC64007AAC9F /* Basket.swift */,
+				56083DFE2A71090100904A19 /* Buy.swift */,
 			);
 			path = team4work;
 			sourceTree = "<group>";
@@ -133,6 +136,7 @@
 				56CE62FF2A70EC64007AAC9F /* Basket.swift in Sources */,
 				56CE62F72A6FF0C8007AAC9F /* Menu.swift in Sources */,
 				1F2E31BD2A6F692A00DF4984 /* main.swift in Sources */,
+				56083DFF2A71090100904A19 /* Buy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,6 +29,10 @@ class Menu {
 
         [ DOMINO MENU ]
         \(detailMenu.joined(separator: "\n"))
+        
+        [ ORDER MENU ]
+        5. Order       | 장바구니를 확인 후 주문합니다.
+        6. Cancel      | 진행중인 주문을 취소합니다.
         """
         print(menu)
         
@@ -48,6 +52,10 @@ class Menu {
         case 4:
             break
         case 5:
+            Buy().buyBasket()
+        case 6:
+            break
+        case 7:
             break
         case 0:
             exit(0)

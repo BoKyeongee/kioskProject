@@ -11,7 +11,7 @@ class Basket {
     var shopping: [String : Double] = [:]
     
     func shoppingBaskset(pick: String, price: Double) {
-        shopping = [pick : price]
+        shopping[pick] = price
         print(shopping)
     }
 }

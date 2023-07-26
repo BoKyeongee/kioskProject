@@ -32,6 +32,10 @@ class Side {
             }
         }
 
+        addBasket()
+    }
+    
+    func addBasket() {
         let menu = """
          
         아래 메뉴판을 보시고 메뉴를 골라 입력해주세요.
@@ -47,14 +51,15 @@ class Side {
             var array: [String] = []
             if value != 0 {
                 print("""
-                    \(key) | W.\(value) |
-                    위 메뉴를 장바구니에 추가하시겠습니까?
-                    1. 확인        2. 취소
+                \(key) | W.\(value) |
+                위 메뉴를 장바구니에 추가하시겠습니까?
+                1. 확인        2. 취소
                 """)
                 let inputBasket = readLine()!
                 if Int(inputBasket)! == 1 {
                     print("\(key)가 장바구니에 추가되었습니다.")
                     Basket().shoppingBaskset(pick: key, price: value)
+                    Menu().callMenu()
                 }
             } else {
             }
