@@ -6,6 +6,7 @@ class Order {
     }
     func order () {
         print("주문이 완료되었습니다!")
+        money -= cartPrice()
         cart.removeAll()
     }
     func showCart () {
@@ -15,5 +16,12 @@ class Order {
             print("이름 : \(cart[i].name) 가격 : \(cart[i].price)원")
         }
         print("합계 : \(sum)원")
+    }
+    func cartPrice () -> Int {
+        var sum : Int = 0
+        for i in 0..<cart.count{
+            sum += cart[i].price
+        }
+        return sum
     }
 }
