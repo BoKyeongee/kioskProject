@@ -23,7 +23,7 @@ class Cart {
     
     func cart(_ input: [String : Int] = [:]) {
         cartContent.merge(input) {(_ , new) in new}
-        print("[CART | 장바구니]\n")
+        print("\n\n\n[CART | 장바구니]\n")
         for (key,value) in cartContent {
             print("상품명: \(key)  |   수량: \(value)")
         }

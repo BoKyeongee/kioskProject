@@ -32,7 +32,7 @@ class PikklesAndSauces {
             "종료"
         ]
         
-        print("\n[PICKLLES & SAUCES]")
+        print("\n\n\n[PICKLLES & SAUCES]\n")
         
         let foodRange = 1...4
         instances.printing.printMenu(menus) // 메뉴 프린팅
@@ -44,7 +44,10 @@ class PikklesAndSauces {
             return
         }
         let cartAddName = menuName[numChoice - 1]
-        print("\(cartAddName)를 몇 개 구매하시겠습니까?(숫자만 입력)")
+        
+        print("\n\n\n")
+        print("===================================")
+        print("\(cartAddName)를 몇 개 구매하시겠습니까?")
         let cartAddCount: Int = instances.selecting.numSelect(999)//stock
         let cartAddContent: [String : Int] = [cartAddName : cartAddCount]
         instances.cart.cart(cartAddContent)

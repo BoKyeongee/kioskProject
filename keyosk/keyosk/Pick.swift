@@ -21,7 +21,7 @@ class Pick {
     ]
     
     func pick() {
-        print("[ PICK CATEGORIES ]")
+        print("\n\n\n[ PICK CATEGORIES ]\n")
         instances.printing.printMenu(menus) // 메뉴 프린팅
         let numChoice: Int = instances.selecting.numSelect(menus.count)
         let numToSet: Set = numset[numChoice]!

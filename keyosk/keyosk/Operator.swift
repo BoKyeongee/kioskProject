@@ -29,7 +29,9 @@ class Operator {
         case .checkout : instances.checkout.checkout()
         case .admin : instances.administration.admin()
         case .home: instances.toHome.home()
-        case .clearCart : instances.cart.cartContent = [:]
+        case .clearCart :
+            instances.cart.cartContent = [:]
+            instances.cart.cart()
         case .exit : instances.exit.exit()
             
         // 카테고리
