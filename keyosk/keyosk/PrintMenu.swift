@@ -11,7 +11,8 @@ class PrintMenu {
     
     func printMenu(_ menus: [String]) {
         for index in 0..<menus.count {
-            print("\(index + 1). \(menus[index])")
+            print("| \(index + 1) |   \(menus[index])")
         }
+        print("\n-----------------------------------------------------")
     }
 }

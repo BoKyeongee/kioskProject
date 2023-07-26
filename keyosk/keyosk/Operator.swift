@@ -36,6 +36,7 @@ class Operator {
             
         // 카테고리
         case .pikklesAndSauces : instances.pns.pns()
+        case .drink : instances.drinkMenu.drink()
 
         default : instances.toHome.home()
         }

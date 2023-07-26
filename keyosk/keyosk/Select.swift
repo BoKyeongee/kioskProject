@@ -16,8 +16,8 @@ class Select{
         // 에러코드가 뜨는 경우 맞는 값이 입력될 때 까지 반복
         while range.contains(n) == false {
             print("""
-                  잘못된 값이 입력 됐습니다.
-                  올바른 숫자를 다시 입력하세요.
+            잘못된 값이 입력 됐습니다.
+            올바른 숫자를 다시 입력하세요.
             """)
             n = Int(readLine()!) ?? 404
             if range.contains(n) == true {return n}

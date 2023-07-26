@@ -1,5 +1,4 @@
-//
-//  main.swift
+
 //  keyosk
 //
 //  Created by 보경 on 2023/07/25.
@@ -17,4 +16,3 @@ class Main {
 }
 
 instances.main.main()
-

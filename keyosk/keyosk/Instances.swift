@@ -19,4 +19,5 @@ class Instances {
     let administration = Admin()
     let exit = Exit()
     let pns = PikklesAndSauces()
+    let drinkMenu = Drinks()
 }
