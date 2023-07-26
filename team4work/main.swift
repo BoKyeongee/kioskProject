@@ -4,100 +4,109 @@
 //
 //  Created by t2023-m0081 on 2023/07/25.
 //
-
+//
 import Foundation
 
-// 음료 메뉴판 아웃라인
-class DrinkMainMenu {
-    let menuOutLineTop: String = "------------------< D r i n k >------------------"
+//3 엔터 콘솔에 하면 드링크 나오게하고싶은대 어렵다 ;ㅅ;
+var mainMenu = DrinkMenu()
+mainMenu.showDrinkMenu()
+
+
+
+class MainShopMenu{
+    var menuOutLineTop: String = "------------------<  M  E  N  U  >------------------"
     let blank: String = "     "
-    let menuCategoriesTag1: String = "[List]"
-    let menuCategoriesTag2: String = "[price : $]"
-    let menuOutLineBottom: String = "-------------------------------------------------"
-    
-    
-    func showMenu() {
-            print(menuOutLineTop)
-            // print(blankShort, menuCategoriesTag1, blankLong, menuCategoriesTag2)
-            print(blank)
-            print("       \(menuCategoriesTag1)                      \(menuCategoriesTag2)")
-            print(blank)
-        for drink in DrinkCategories.DrinkName.allCases { // 수정된 부분
-            let drinkNum = drink.number()
-            let drinkName = drink.eachDrink()
-            let drinkPrice = drink.drinkPrice()
-            print(" \(drinkNum). \(drinkName)      ....................\(drinkPrice)          ")
+    var menuCategoriesTag1: String = "[List]"
+    //let menuCategoriesTag2: String = "[price : $]"
+    var menuOutLineBottom: String = "----------------------------------------------------"
+
+    func showMainShopMenu () {
+        print(menuOutLineTop)
+        print(blank)
+        print("       \(menuCategoriesTag1)")
+        print(blank)
+        for MainShopFood in MainShopCategories.foodCategories.allCases{
+            let foodnum = MainShopFood.number()
+            let foodEach = MainShopFood.eachFood()
+            print(" \(foodnum)  \(foodEach)")
         }
-            print(menuOutLineBottom)
-        }
+        print(menuOutLineBottom)
     }
+}
 
-//쇼미더메뉴판
-var mainMenu = DrinkMainMenu()
-mainMenu.showMenu()
+let showShopMenu = MainShopMenu()
+showShopMenu.showMainShopMenu()
 
-    
+class MainShopCategories {
 
-//음료수 종류 만들어보기!
-class DrinkCategories {
-    
-    enum DrinkName :CaseIterable{
-        case coca
-        case pepsi
-        case fanta
-        case orangina
-        case newdrink
-        
+    enum foodCategories :CaseIterable{
+        case pizza
+        case pasta
+        case drinks
+        case sauce
+        case etc
+
         func number() -> Int {
             switch self{
-            case .coca:
+            case .pizza:
                 return 1
-            case .pepsi:
+            case .pasta:
                 return 2
-            case .fanta :
+            case .drinks :
                 return 3
-            case .orangina :
+            case .sauce :
                 return 4
-            case . newdrink :
+            case . etc :
                 return 5
             }
         }
-        func eachDrink() -> String {
+        func eachFood() -> String {
             switch self {
-            case .coca:
-                return "  Coca-Cola "
-            case .pepsi:
-                return " Pepsi-Cola "
-            case .fanta:
-                return "    Fanta   "
-            case .orangina:
-                return "  Orangina  "
-            case .newdrink:
-                return "  New Drink "
+            case .pizza:
+                return "  P I Z Z A "
+            case .pasta:
+                return "  P A S T A "
+            case .drinks:
+                return "  D R I N K "
+            case .sauce:
+                return "  S A U C E "
+            case .etc:
+                return "   E  T  C  "
             default:
                 break
-            }
-        }
-        
-        func drinkPrice() -> Double {
-            switch self {
-            case .coca:
-                return 3
-            case .pepsi:
-                return 2.5
-            case .fanta:
-                return 2
-            case .orangina:
-                return 3
-            case .newdrink:
-                return 0
-
-            default:
-                break
-                
-               
             }
         }
     }
 }
+
+
+
+
+
+
+//ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ//
+//ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ//
+//ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ//
+
+
+
+
+///옵셔널연습
+///
+//class Choice{
+//    func myChoice() {
+//
+//
+//        if let name = readLine() {
+//
+//            print("")
+//        } else {
+//
+//            print("no")
+//        }
+//    }
+//}
+//var selectChoice = Choice()
+//selectChoice.myChoice()
+
 
