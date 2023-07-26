@@ -13,7 +13,7 @@ class Side {
     
     var menuNumber = [""]
     
-    func callSideMenu() -> String {
+    func callSideMenu() {
         let sideFlatMap = sideMenu.flatMap { (key, value) -> Array in
             var array: [String] = []
             if value != 0 {
@@ -39,6 +39,26 @@ class Side {
         [ SIDE MENU ]
         \(menuNumber.joined(separator: "\n"))
         """
-        return menu
+        print(menu)
+        
+        let input = readLine()!
+        
+        sideMenu.flatMap { (key, value) -> Array in
+            var array: [String] = []
+            if value != 0 {
+                print("""
+                    \(key) | W.\(value) |
+                    위 메뉴를 장바구니에 추가하시겠습니까?
+                    1. 확인        2. 취소
+                """)
+                let inputBasket = readLine()!
+                if Int(inputBasket)! == 1 {
+                    print("\(key)가 장바구니에 추가되었습니다.")
+                    Basket().shoppingBaskset(pick: key, price: value)
+                }
+            } else {
+            }
+            return array
+        }
     }
 }
