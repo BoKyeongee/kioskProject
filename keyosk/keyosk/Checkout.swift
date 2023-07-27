@@ -21,7 +21,7 @@ class Checkout {
         let cartContent : [String : Int] = instances.cart.cartContent
         
         
-        print("아래와 같이 주문 하시겠습니까?\n")
+        print("\n\n아래와 같이 주문 하시겠습니까?\n")
         print("[ Orders ]")
         for (key, value) in cartContent {
             print("메뉴명: \(key)  수량: \(value)")

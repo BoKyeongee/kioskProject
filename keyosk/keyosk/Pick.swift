@@ -8,7 +8,7 @@
 import Foundation
 
 class Pick {
-    let menus: [String] = ["P I Z Z A ","P A S T A ","S I D E","D R I N K ","P I K K L E  & S A U C E","H O M E","E X I T"]
+    let menus: [String] = ["피자","파스타","사이드","음료","피클&소스","홈 화면","종료"]
     
     let numset: [Int: Set] = [
         1 : .pizza,
@@ -21,7 +21,7 @@ class Pick {
     ]
     
     func pick() {
-        print("\n\n\n[ P I C K C A T E G O R I E S ]\n")
+        print("\n\n[ PICK CATEGORIES ]\n")
         instances.printing.printMenu(menus) // 메뉴 프린팅
         let numChoice: Int = instances.selecting.numSelect(menus.count)
         let numToSet: Set = numset[numChoice]!

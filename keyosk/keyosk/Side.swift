@@ -13,11 +13,11 @@ class Side {
     var menuCost: [Int]  = [4600,9800,9800,5600,9800]
     
     let numset: [Int: Set]  = [
-        1 : .pikkleM,
-        2 : .pikkleL,
-        3 : .garlicDip,
-        4 : .hotSauce,
-        5 : .hotSauce,
+        1 : .food,
+        2 : .food,
+        3 : .food,
+        4 : .food,
+        5 : .food,
         6 : .home,
         7 : .exit,
     ]
@@ -46,8 +46,8 @@ class Side {
         }
         let cartAddName = menuName[numChoice - 1]
         
-        print("\n\n\n-----------------------------------------------------")
-        print("\n[ A D D  T O  C A R T ]\n")
+        print("\n-----------------------------------------------------")
+        print("\n[ 장바구니에 담기 ]\n")
         
         print("\(cartAddName)를 몇 개 구매하시겠습니까?")
         let cartAddCount: Int = instances.selecting.numSelect(999)//stock
