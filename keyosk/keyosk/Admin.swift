@@ -8,11 +8,11 @@
 import Foundation
 
 class Admin: Home {
-    
+
     var password = "0000"
-    
+
     func changePassword () {
-        
+
         print("비밀번호를 입력하세요\n")
         let pw = getString()
         if pw.elementsEqual(password) {
@@ -23,9 +23,9 @@ class Admin: Home {
         else {
             print("비밀번호가 올바르지 않습니다.")
         }
-        
+
     }
-    
+
     func admin () {
         print("-----------------<  A D M I N  >-----------------\n")
         print("| 1 | 피자 메뉴 관리")
