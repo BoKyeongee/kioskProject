@@ -20,7 +20,7 @@ class Home{
     
     func home() {
         print("\n\n\n-----------------<  W E L C O M E  >-----------------\n")
-        print("[ D O M I N O  P I Z Z A ]\n")
+        print("[ DOMINO  PIZZA ]\n")
         instances.printing.printMenu(menus) // 메뉴 프린팅
         let numChoice: Int = instances.selecting.numSelect(menus.count)
         let numToSet: Set = numset[numChoice]!

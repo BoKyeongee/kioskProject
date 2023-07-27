@@ -14,8 +14,8 @@ enum Set{
     // 카테고리
     case pikklesAndSauces, pizza, pasta, drink, side
     
-    // 피클 & 소스 메뉴
-    case pikkleM, pikkleL, garlicDip, hotSauce
+    // food
+    case food
     
     // 음료 메뉴
 
