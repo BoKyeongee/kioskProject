@@ -50,7 +50,7 @@ class Pasta {
         print("\(cartAddName)를 몇 개 구매하시겠습니까?")
         let cartAddCount: Int = instances.selecting.numSelect(999)//stock
         let cartAddContent: [String : Int] = [cartAddName : cartAddCount]
-        instances.cart.cart(cartAddContent)
+        instances.cart.cart(cartAddContent, menuCost[numChoice - 1] * cartAddCount)
         return
     }
 }

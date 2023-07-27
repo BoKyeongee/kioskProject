@@ -8,7 +8,7 @@
 import Foundation
 
 class Home{
-    let menus: [String] = ["P I C K  M E N U","C A R T","C H E C K  O U T","A D M I N","E X I T"]
+    var menus: [String] = ["P I C K  M E N U","C A R T","C H E C K  O U T","A D M I N","E X I T"]
     
     let numset: [Int: Set] = [
         1 : .pick,

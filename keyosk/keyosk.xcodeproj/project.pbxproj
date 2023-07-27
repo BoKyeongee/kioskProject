@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56083E0C2A72041200904A19 /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56083E0B2A72041200904A19 /* Function.swift */; };
 		DC62868C2A6F9DEE00CDD1D8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62868B2A6F9DEE00CDD1D8 /* main.swift */; };
 		DC6286932A6FAE7500CDD1D8 /* Instances.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6286922A6FAE7500CDD1D8 /* Instances.swift */; };
 		DC6286952A6FAEB400CDD1D8 /* PrintMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6286942A6FAEB400CDD1D8 /* PrintMenu.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		56083E0B2A72041200904A19 /* Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
 		DC6286882A6F9DEE00CDD1D8 /* keyosk */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = keyosk; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC62868B2A6F9DEE00CDD1D8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		DC6286922A6FAE7500CDD1D8 /* Instances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instances.swift; sourceTree = "<group>"; };
@@ -68,6 +70,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56083E082A72021600904A19 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				DCD764452A71F24A0020D2E2 /* Drinks.swift */,
+				DCD764472A71F46F0020D2E2 /* Pizza.swift */,
+				DCD764492A71F57A0020D2E2 /* Pasta.swift */,
+				DCD764432A71F02A0020D2E2 /* Side.swift */,
+				DCD764412A6FBFF60020D2E2 /* PikklesAndSauces.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		56083E092A72026300904A19 /* Buy&Cart */ = {
+			isa = PBXGroup;
+			children = (
+				DC62869C2A6FAF3500CDD1D8 /* Pick.swift */,
+				DC62869E2A6FAF4800CDD1D8 /* Cart.swift */,
+				DC6286A02A6FAF5F00CDD1D8 /* Checkout.swift */,
+			);
+			path = "Buy&Cart";
+			sourceTree = "<group>";
+		};
+		56083E0A2A7202EB00904A19 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DC6286922A6FAE7500CDD1D8 /* Instances.swift */,
+				DC6286942A6FAEB400CDD1D8 /* PrintMenu.swift */,
+				DC6286982A6FAEF800CDD1D8 /* Select.swift */,
+				DC6286962A6FAED300CDD1D8 /* Operator.swift */,
+				56083E0B2A72041200904A19 /* Function.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		DC62867F2A6F9DEE00CDD1D8 = {
 			isa = PBXGroup;
 			children = (
@@ -87,22 +123,13 @@
 		DC62868A2A6F9DEE00CDD1D8 /* keyosk */ = {
 			isa = PBXGroup;
 			children = (
-				DCD764452A71F24A0020D2E2 /* Drinks.swift */,
 				DC62868B2A6F9DEE00CDD1D8 /* main.swift */,
-				DC6286962A6FAED300CDD1D8 /* Operator.swift */,
-				DC6286982A6FAEF800CDD1D8 /* Select.swift */,
-				DC6286942A6FAEB400CDD1D8 /* PrintMenu.swift */,
-				DC6286922A6FAE7500CDD1D8 /* Instances.swift */,
 				DC62869A2A6FAF1700CDD1D8 /* Home.swift */,
-				DCD764412A6FBFF60020D2E2 /* PikklesAndSauces.swift */,
-				DC62869C2A6FAF3500CDD1D8 /* Pick.swift */,
-				DC62869E2A6FAF4800CDD1D8 /* Cart.swift */,
-				DC6286A02A6FAF5F00CDD1D8 /* Checkout.swift */,
+				56083E0A2A7202EB00904A19 /* Utilities */,
+				56083E082A72021600904A19 /* Menu */,
+				56083E092A72026300904A19 /* Buy&Cart */,
 				DC6286A22A6FAF7300CDD1D8 /* Admin.swift */,
 				DC6286A42A6FAF8C00CDD1D8 /* Exit.swift */,
-				DCD764432A71F02A0020D2E2 /* Side.swift */,
-				DCD764472A71F46F0020D2E2 /* Pizza.swift */,
-				DCD764492A71F57A0020D2E2 /* Pasta.swift */,
 			);
 			path = keyosk;
 			sourceTree = "<group>";
@@ -176,6 +203,7 @@
 				DCD764482A71F46F0020D2E2 /* Pizza.swift in Sources */,
 				DC6286932A6FAE7500CDD1D8 /* Instances.swift in Sources */,
 				DCD764422A6FBFF60020D2E2 /* PikklesAndSauces.swift in Sources */,
+				56083E0C2A72041200904A19 /* Function.swift in Sources */,
 				DC62869B2A6FAF1700CDD1D8 /* Home.swift in Sources */,
 				DC6286992A6FAEF800CDD1D8 /* Select.swift in Sources */,
 				DC6286A52A6FAF8C00CDD1D8 /* Exit.swift in Sources */,
@@ -304,6 +332,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -313,6 +342,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};

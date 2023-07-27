@@ -1,16 +1,17 @@
 //
-//  Pizza.swift
+//  DetailMenus.swift
 //  keyosk
 //
-//  Created by 보경 on 2023/07/27.
+//  Created by 보경 on 2023/07/25.
 //
 
 import Foundation
 
-class Pizza {
+// 피클과 소스
+class PikklesAndSauces {
     
-    var menuName: [String]  = ["치즈 크레이프 샌드 피자","아보카도 새우 피자","대만 콘 치즈 감자 피자","이탈리아 마르게리따 피자"]
-    var menuCost: [Int]  = [34900,27900,17900,17900]
+    var menuName: [String]  = ["우 리 피 클 M","우 리 피 클 L","갈 릭 디 핑 소 스","핫 소 스"]
+    var menuCost: [Int]  = [500,800,200,100]
     
     let numset: [Int: Set]  = [
         1 : .pikkleM,
@@ -21,7 +22,7 @@ class Pizza {
         6 : .exit,
     ]
     
-    func pizza() {
+    func pns() {
         let menus: [String] = [
             "\(menuName[0]) ................ \(menuCost[0])",
             "\(menuName[1]) ................ \(menuCost[1])",
@@ -31,7 +32,7 @@ class Pizza {
             "종료"
         ]
         
-        print("\n\n\n[PIZZA MENU]\n")
+        print("\n\n\n[PICKLLES & SAUCES MENU]\n")
         
         let foodRange = 1...4
         instances.printing.printMenu(menus) // 메뉴 프린팅
@@ -50,7 +51,7 @@ class Pizza {
         print("\(cartAddName)를 몇 개 구매하시겠습니까?")
         let cartAddCount: Int = instances.selecting.numSelect(999)//stock
         let cartAddContent: [String : Int] = [cartAddName : cartAddCount]
-        instances.cart.cart(cartAddContent)
+        instances.cart.cart(cartAddContent, menuCost[numChoice - 1] * cartAddCount)
         return
     }
 }

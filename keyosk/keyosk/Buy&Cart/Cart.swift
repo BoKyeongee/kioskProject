@@ -19,9 +19,11 @@ class Cart {
     ]
     
     var cartContent: [String : Int] = [:]
+    var price: Int = 0
     
-    func cart(_ input: [String : Int] = [:]) {
+    func cart(_ input: [String : Int] = [:], _ price: Int = 0) {
         cartContent.merge(input) {(_ , new) in new}
+        self.price += price
         print("\n\n\n[CART | 장바구니]\n")
         for (key,value) in cartContent {
             print("상품명: \(key)  |   수량: \(value)")
