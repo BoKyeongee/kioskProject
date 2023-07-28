@@ -34,23 +34,34 @@ class Admin {
         return value
     }
     func admin() {
-        print("\n\n[ 관리자 화면 ]")
+        print("\n\n[ 관리자 화면 ]\n")
         print("| 1 | PIZZA 메뉴 관리")
         print("| 2 | PASTA 메뉴 관리")
         print("| 3 | SIDE 메뉴 관리")
         print("| 4 | DRINK 메뉴 관리")
         print("| 5 | PICKKLE & SAUCE 메뉴 관리")
-        print("| 0 | 돌아가기")
+        print("| 6 | 돌아가기")
+        print("\n===============================")
         let index = instances.functions.getInt(5)
         switch index {
         case 1 :
-            print("\n\n[ 피자 메뉴 수정 화면 ]")
+            print("\n\n[ 피자 메뉴 수정 화면 ]\n")
             showMenu(instances.productData.pizzaMenu)
+            print("\n===============================")
+            print("", terminator: "  >>  ")
             let menuNum = instances.functions.getInt(instances.productData.pizzaMenu.count)
-            print("이름 : \(instances.productData.pizzaMenu[menuNum-1].name) 가격 : \((instances.productData.pizzaMenu[menuNum - 1].price)) ")
-            print("수정할 메뉴 이름을 입력하세요 (아무것도 입력하지 않을 시 변경되지 않습니다.)")
+            let numberFormatter = NumberFormatter()
+                        numberFormatter.numberStyle = .decimal
+            let priceFormat = numberFormatter.string(from: instances.productData.pastaMenu[menuNum - 1].price as NSNumber) ?? ""
+            print("\n\n[ 현재 메뉴 정보 ]\n")
+            print("\n이름 : \(instances.productData.pizzaMenu[menuNum-1].name)\n가격 : \(priceFormat)원 ")
+            print("\n수정할 메뉴 이름을 입력하세요.\n(공백 불가, 영어와 정수만 입력 가능)")
+            print("\n===============================")
+            print("", terminator: "  >>  ")
             let newName = getName()
-            print("수정할 메뉴 가격을 입력하세요 (아무것도 입력하지 않을 시 변경되지 않습니다.)")
+            print("\n수정할 메뉴 가격을 입력하세요\n(공백 불가, 정수만 입력 가능)")
+            print("\n===============================")
+            print("", terminator: "  >>  ")
             let newPrice = getPrice()
             if newName != "" {
                 instances.productData.pizzaMenu[menuNum - 1].name = newName
@@ -58,15 +69,26 @@ class Admin {
             if newPrice != -1 {
                 instances.productData.pizzaMenu[menuNum - 1].price = newPrice
             }
+            print("변경이 완료 됐습니다\n\n")
         case 2:
-            print("\n\n[ 파스타 메뉴 수정 화면 ]")
+            print("\n\n[ 파스타 메뉴 수정 화면 ]\n")
             showMenu(instances.productData.pastaMenu)
+            print("\n===============================")
             let menuNum = instances.functions.getInt(instances.productData.pastaMenu.count)
-
-            print("\n이름 : \(instances.productData.pastaMenu[menuNum-1].name) 가격 : \((instances.productData.pastaMenu[menuNum-1].price)) ")
-            print("수정할 메뉴 이름을 입력하세요 (아무것도 입력하지 않을 시 변경되지 않습니다.)")
+            let numberFormatter = NumberFormatter()
+                        numberFormatter.numberStyle = .decimal
+                        
+                        // 지폐 단위로 가격 변경
+            let priceFormat = numberFormatter.string(from: instances.productData.pastaMenu[menuNum - 1].price as NSNumber) ?? ""
+            print("\n\n[ 현재 메뉴 정보 ]\n")
+            print("\n이름 : \(instances.productData.pastaMenu[menuNum-1].name) \n가격 : \(priceFormat)원")
+            print("\n수정할 메뉴 이름을 입력하세요.\n(공백 불가, 영어와 정수만 입력 가능)")
+            print("\n===============================")
+            print("", terminator: "  >>  ")
             let newName = getName()
-            print("수정할 메뉴 가격을 입력하세요 (아무것도 입력하지 않을 시 변경되지 않습니다.)")
+            print("\n수정할 메뉴 가격을 입력하세요\n(공백 불가, 정수만 입력 가능)")
+            print("\n===============================")
+            print("", terminator: "  >>  ")
             let newPrice = getPrice()
             if newName != "" {
                 instances.productData.pastaMenu[menuNum - 1].name = newName
@@ -74,19 +96,26 @@ class Admin {
             if newPrice != -1 {
                 instances.productData.pastaMenu[menuNum - 1].price = newPrice
             }
+            print("변경이 완료 됐습니다\n\n")
         case 3:
             print("\n\n[ 사이드 메뉴 수정 화면 ]\n")
             showMenu(instances.productData.sideMenu)
+            print("\n===============================")
             let menuNum = instances.functions.getInt(instances.productData.sideMenu.count)
             let numberFormatter = NumberFormatter()
                         numberFormatter.numberStyle = .decimal
                         
                         // 지폐 단위로 가격 변경
             let priceFormat = numberFormatter.string(from: instances.productData.sideMenu[menuNum - 1].price as NSNumber) ?? ""
-            print("이름 : \(instances.productData.sideMenu[menuNum-1].name) 가격 : \(priceFormat) ")
-            print("수정할 메뉴 이름을 입력하세요 (아무것도 입력하지 않을 시 변경되지 않습니다.)")
+            print("\n\n[ 현재 메뉴 정보 ]\n")
+            print("\n이름 : \(instances.productData.sideMenu[menuNum-1].name)\n가격 : \(priceFormat)원")
+            print("\n수정할 메뉴 이름을 입력하세요.\n(공백 불가, 영어와 정수만 입력 가능)")
+            print("\n===============================")
+            print("", terminator: "  >>  ")
             let newName = getName()
-            print("수정할 메뉴 가격을 입력하세요 (아무것도 입력하지 않을 시 변경되지 않습니다.)")
+            print("\n수정할 메뉴 가격을 입력하세요\n(공백 불가, 정수만 입력 가능)")
+            print("\n===============================")
+            print("", terminator: "  >>  ")
             let newPrice = getPrice()
             if newName != "" {
                 instances.productData.sideMenu[menuNum - 1].name = newName
@@ -94,14 +123,26 @@ class Admin {
             if newPrice != -1 {
                 instances.productData.sideMenu[menuNum - 1].price = newPrice
             }
+            print("변경이 완료 됐습니다\n\n")
         case 4:
             print("\n\n[ 음료 메뉴 수정 화면 ]\n")
             showMenu(instances.productData.drinkMenu)
+            print("\n===============================")
             let menuNum = instances.functions.getInt(instances.productData.drinkMenu.count)
-            print("이름 : \(instances.productData.drinkMenu[menuNum-1].name) 가격 : \((instances.productData.drinkMenu[menuNum-1].price)) ")
-            print("수정할 메뉴 이름을 입력하세요 (아무것도 입력하지 않을 시 변경되지 않습니다.)")
+            let numberFormatter = NumberFormatter()
+                        numberFormatter.numberStyle = .decimal
+                        
+                        // 지폐 단위로 가격 변경
+            let priceFormat = numberFormatter.string(from: instances.productData.drinkMenu[menuNum - 1].price as NSNumber) ?? ""
+            print("\n\n[ 현재 메뉴 정보 ]\n")
+            print("\n이름 : \(instances.productData.drinkMenu[menuNum-1].name)\n가격 : \(priceFormat)원 ")
+            print("\n수정할 메뉴 이름을 입력하세요.\n(공백 불가, 영어와 정수만 입력 가능)")
+            print("\n===============================")
+            print("", terminator: "  >>  ")
             let newName = getName()
-            print("수정할 메뉴 가격을 입력하세요 (아무것도 입력하지 않을 시 변경되지 않습니다.)")
+            print("\n수정할 메뉴 가격을 입력하세요\n(공백 불가, 정수만 입력 가능)")
+            print("\n===============================")
+            print("", terminator: "  >>  ")
             let newPrice = getPrice()
             if newName != "" {
                 instances.productData.drinkMenu[menuNum - 1].name = newName
@@ -109,14 +150,26 @@ class Admin {
             if newPrice != -1 {
                 instances.productData.drinkMenu[menuNum - 1].price = newPrice
             }
+            print("변경이 완료 됐습니다\n\n")
         case 5:
             print("\n\n[ 피클&소스 메뉴 수정 화면 ]\n")
             showMenu(instances.productData.pickkleMenu)
+            print("\n===============================")
             let menuNum = instances.functions.getInt(instances.productData.pickkleMenu.count)
-            print("이름 : \(instances.productData.pickkleMenu[menuNum-1].name) 가격 : \((instances.productData.pickkleMenu[menuNum-1].price)) ")
-            print("수정할 메뉴 이름을 입력하세요 (아무것도 입력하지 않을 시 변경되지 않습니다.)")
+            let numberFormatter = NumberFormatter()
+                        numberFormatter.numberStyle = .decimal
+                        
+                        // 지폐 단위로 가격 변경
+            let priceFormat = numberFormatter.string(from: instances.productData.pickkleMenu[menuNum - 1].price as NSNumber) ?? ""
+            print("\n\n[ 현재 메뉴 정보 ]\n")
+            print("\n이름 : \(instances.productData.pickkleMenu[menuNum-1].name)\n가격 : \(priceFormat)원")
+            print("\n수정할 메뉴 이름을 입력하세요.\n(공백 불가, 영어와 정수만 입력 가능)")
+            print("\n===============================")
+            print("", terminator: "  >>  ")
             let newName = getName()
-            print("수정할 메뉴 가격을 입력하세요 (아무것도 입력하지 않을 시 변경되지 않습니다.)")
+            print("\n수정할 메뉴 가격을 입력하세요\n(공백 불가, 정수만 입력 가능)")
+            print("\n===============================")
+            print("", terminator: "  >>  ")
             let newPrice = getPrice()
             if newName != "" {
                 instances.productData.pickkleMenu[menuNum - 1].name = newName
@@ -124,9 +177,11 @@ class Admin {
             if newPrice != -1 {
                 instances.productData.pickkleMenu[menuNum - 1].price = newPrice
             }
+            print("변경이 완료 됐습니다")
         default: instances.categories.category(instances.productData.homeMenu)
         }
-        instances.categories.category(instances.productData.homeMenu)
+        
+        instances.operating.oper(.home)
         return
     }
 }
