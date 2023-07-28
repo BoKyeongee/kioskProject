@@ -16,11 +16,6 @@ enum Set{
     
     // food
     case food
-    
-    static let homeSetArray = [pizza, pasta, side, drink, pickkle, admin, exit]
-    static let foodSetArray = [food, home, exit]
-    static let cartSetArray = [checkout, home, clearCart, exit]
-        
 }
 
 class Operator {
@@ -29,27 +24,43 @@ class Operator {
         switch input {
         // 기본 메뉴
 //        case .checkout : instances.checkout.checkout()
-        case .admin : instances.admin.admin()
-        case .home: instances.toHome.home()
+        case .admin : instances.toAdmin.admin()
+        case .home:
+            print("\n\n============WELCOME============\n\n[ DOMINO PIZZA | HOME ]\n")
+            instances.categories.category(instances.productData.homeMenu)
         case .clearCart :
-            instances.functions.cartContent = [[]]
-            instances.functions.cart([[]])
+            instances.functions.cartContent = []
+            instances.functions.viewCart([])
         case .exit : instances.functions.exit()
         case .orderComplete :
             print("주문이 완료되었습니다.")
             return
             
         // 카테고리
-        case .drink : instances.drinkMenu.drink()
-        case .side : instances.sideMenu.side()
-        case .pizza :instances.pizzaMenu.pizza()
-        case .pasta : instances.pastaMenu.pasta()
-        case .pickkle : instances.pickkleMenu.pickkle()
+        case .drink :
+            print("\n\n\n[DRINK MENU]\n")
+            instances.categories.category(instances.productData.drinkMenu)
+
+        case .side :
+            print("\n\n\n[SIDE MENU]\n")
+            instances.categories.category(instances.productData.sideMenu)
+
+        case .pizza :
+            print("\n\n\n[PIZZA MENU]\n")
+            instances.categories.category(instances.productData.pizzaMenu)
+
+        case .pasta :
+            print("\n\n\n[PASTA MENU]\n")
+            instances.categories.category(instances.productData.pastaMenu)
+
+        case .pickkle :
+            print("\n\n\n[PICKKLE MENU]\n")
+            instances.categories.category(instances.productData.pickkleMenu)
             
-        // 주문
 
-
-        default : instances.toHome.home()
+        default : instances.categories.category(instances.productData.homeMenu)
         }
     }
+    
+   
 }

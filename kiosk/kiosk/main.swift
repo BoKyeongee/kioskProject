@@ -11,7 +11,7 @@ let instances = Instances()
 
 class Main {
     func main() {
-        instances.toHome.home()
+        instances.operating.oper(.home)
     }
 }
 

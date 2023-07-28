@@ -14,9 +14,8 @@ class Instances {
     let operating = Operator()
     
     // 기본 메뉴
-    let toHome = Home()
 //    let checkout = Checkout()
-    let admin = Admin()
+    let toAdmin = Admin()
     
     // 기능 접근 시
     let functions = Functions()
@@ -25,11 +24,6 @@ class Instances {
     let productData = MenuInfo()
     
     // 상세 메뉴
-    let pickkleMenu = Pickkle()
-    let drinkMenu = Drink()
-    let sideMenu = Side()
-    let pizzaMenu = Pizza()
-    let pastaMenu = Pasta()
-    
+    let categories = Categories()
     
 }

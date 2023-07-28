@@ -14,26 +14,11 @@ class Functions {
         print("프로그램을 종료합니다")
         return
     }
-    
-    // 입력되는 숫자에 Set값을 배치하는 딕셔너리 생성
-    func makeNumSet(_ menulist: [Menu], _ setlist: [Set]) -> [Int: Set] {
-        var numSet: [Int: Set] = [:]
-        // 홈 화면 or 장바구니 화면일 때 guard 지나침
-        guard setlist[0] != .food else{
-            //상세 화면
-            for i in 1 ... menulist.count {numSet[i] = .food}
-            numSet[menulist.count + 1] = .home
-            numSet[menulist.count + 2] = .exit
-            return numSet
-        }
-        for i in 1 ... menulist.count {numSet[i] = setlist[i - 1]}
-        return numSet
-    }
-    
+
     // 숫자 입력받고 옵셔널 처리
-    func numChoice(_ menuNum: Int) -> Int{
+    func getInt(_ menuRange: Int) -> Int{
         print("\n숫자를 입력해주세요", terminator: " >> ")
-        let range = 1...menuNum
+        let range = 1...menuRange
         var n: Int = Int(readLine()!) ?? 404
         
         // 에러코드가 뜨는 경우 맞는 값이 입력될 때 까지 반복
@@ -46,84 +31,74 @@ class Functions {
     }
     
 
-    func displayHome(_ numSet: [Int : Set]) {
-        // 홈 메뉴 그리기
-        let menulist: [Menu] = instances.productData.homeMenu
-        for i in 0..<menulist.count {
-            print("| \(i + 1) |   \(menulist[i].name)")
+    func displayMenu(_ menulist: [Menu]) {
+        // 메뉴 띄우기
+        
+        if menulist[0].set == .food {
+            // 상세 화면
+            for i in 0 ..< menulist.count {
+                print(" | \(i + 1) |   \(menulist[i].name)")
+            }
+            print(" | \(menulist.count + 1) |   HOME MENU\n | \(menulist.count + 2) |   QUIT")
         }
-        print("---------------------------------", separator: "", terminator: "\n >> ")
-        let choicedNum: Int = numChoice(menulist.count) // 숫자 받기
-        let numToSet: Set = numSet[choicedNum]! // 받은 숫자를 Set값으로 변경
-        instances.operating.oper(numToSet) // Set값으로 oper()속의 switch문 실행
+        else {
+            for i in 0 ..< menulist.count {
+                print("| \(i + 1) |   \(menulist[i].name)")
+            }
+        }
+        
+        print("===============================")
+        let inputNum: Int = getInt(menulist.count) // 숫자 받기
+        let setValue: Set = menulist[inputNum].set // 받은 숫자를 Set값으로 변경
+        
+        if menulist[0].set == .food{
+            order(menulist[inputNum].name, menulist[inputNum].price)
+            // 상세 메뉴로 갈 경우 오더로 파라미터 전달
+            return
+        }
+        instances.operating.oper(setValue)
+        // 상세 메뉴 아닐 때, Set값으로 oper()속의 switch문 실행
         return
     }
     
-    func displayCart(_ numSet: [Int : Set]) {
-        // 장바구니 메뉴 그리기
-        let menulist: [Menu] = instances.productData.cartMenu
-        for i in 0..<menulist.count {
-            print("| \(i + 1) |   \(menulist[i].name)")
-        }
-        print("---------------------------------", separator: "", terminator: "\n >> ")
-        let choicedNum: Int = numChoice(menulist.count) // 숫자 받기
-        let numToSet: Set = numSet[choicedNum]! // 받은 숫자를 Set값으로 변경
-        instances.operating.oper(numToSet) // Set값으로 oper()속의 switch문 실행
-        return
-    }
-    
-    
-    // 세부 메뉴 그리기
-    func displayDetail(_ numSet: [Int : Set],_ menulist: [Menu]) {
-        for i in 0..<menulist.count {
-            print("| \(i + 1) |   \(menulist[i].name)")
-        }
-        print("\n | \(menulist.count) |   HOME MENU\n\(menulist.count + 1) |   QUIT")
-        print("---------------------------------", separator: "", terminator: "\n >> ")
-        let choicedNum: Int = numChoice(menulist.count) // 숫자 받기
-        let menuName: String = menulist[choicedNum - 1].name
-        let menuPrice: Int = menulist[choicedNum - 1].price
-        let cartContent = order(menuName, menuPrice)
-        cart(cartContent)
-        return
-    }
-    
-    
-    
-    var cartContent: [[Any]] = [[]] // 내용 유지 위해 함수 밖에 선언
-    func order(_ menuName: String, _ menuPrice: Int) -> [[Any]]{
+    var cartContent: [[Any]] = [] // 내용 유지 위해 함수 밖에 선언
+    func order(_ menuName: String, _ menuPrice: Int) {
         print("\n[ ADD TO CART ]\n")
         print("\(menuName)를 몇 개 구매하시겠습니까?")
-        let menuCount: Int = numChoice(999)//stock
-        let cost: Int = menuPrice * menuCount
+        let menuCount: Int = getInt(10000) // stock 내 숫자로 개수 입력
+        let cost: Int = menuPrice * menuCount // 해당 메뉴 비용 계산
         
-        var i: Int = 0
-        while i < cartContent.count {
-            if cartContent[i][0] as! String == menuName{
-                cartContent[i] = [menuName, cartContent[i][1] as! Int + menuCount, cartContent[i][2] as! Int + cost]
+        cartContent.append([menuName, menuCount, cost])
+        
+        guard cartContent.count == 1 else{
+            for i in 0 ..< cartContent.count - 1 {
+                if cartContent[i][0] as! String == menuName {
+                    cartContent[i] = [menuName, cartContent[i][1] as! Int + menuCount, cartContent[i][2] as! Int + cost]
+                    cartContent.remove(at: cartContent.count - 1)
+                }
             }
-            else{
-                cartContent.append([menuName, menuCount, cost])
-                break
-            }
-            i += 1
+            viewCart(cartContent)
+            return
         }
-        return cartContent
+        viewCart(cartContent)
+        return
     }
     
-    func cart(_ cartContent: [[Any]]) {
+    func viewCart(_ cartContent: [[Any]]) {
         print("\n\n[ CART ]\n")
         var total: Int = 0
-        for i in 0..<cartContent.count {
+        
+        guard cartContent.isEmpty == true else {
+            print("장바구니가 비었습니다.")
+            displayMenu(instances.productData.emptyCartMenu)
+            return
+        }
+        
+        for i in 0 ..< cartContent.count {
             print("상품명: \(cartContent[i][0])  |   수량: \(cartContent[i][1])  |   가격: \(cartContent[i][2])")
             total += cartContent[i][2] as! Int
         }
-        print("================================", separator: "", terminator: "\n >> ")
-        let numSet = makeNumSet(instances.productData.cartMenu, Set.cartSetArray)
-        displayCart(numSet)
-        let inputNum = numChoice(Set.cartSetArray.count)
-        let numToSet = numSet[inputNum]!
-        instances.operating.oper(numToSet)
+        displayMenu(instances.productData.cartMenu)
         return
     }
    

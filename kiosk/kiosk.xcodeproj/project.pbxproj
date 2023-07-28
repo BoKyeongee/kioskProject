@@ -12,10 +12,8 @@
 		DC62868C2A6F9DEE00CDD1D8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62868B2A6F9DEE00CDD1D8 /* main.swift */; };
 		DC6286932A6FAE7500CDD1D8 /* Instances.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6286922A6FAE7500CDD1D8 /* Instances.swift */; };
 		DC6286972A6FAED300CDD1D8 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6286962A6FAED300CDD1D8 /* Operator.swift */; };
-		DC62869F2A6FAF4800CDD1D8 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC62869E2A6FAF4800CDD1D8 /* Cart.swift */; };
 		DC6286A12A6FAF5F00CDD1D8 /* Checkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6286A02A6FAF5F00CDD1D8 /* Checkout.swift */; };
 		DC6286A32A6FAF7300CDD1D8 /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6286A22A6FAF7300CDD1D8 /* Admin.swift */; };
-		DCD7644A2A71F57A0020D2E2 /* Pasta.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD764492A71F57A0020D2E2 /* Pasta.swift */; };
 		DCD7644C2A7216EC0020D2E2 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7644B2A7216EC0020D2E2 /* Menu.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,10 +36,8 @@
 		DC62868B2A6F9DEE00CDD1D8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		DC6286922A6FAE7500CDD1D8 /* Instances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instances.swift; sourceTree = "<group>"; };
 		DC6286962A6FAED300CDD1D8 /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
-		DC62869E2A6FAF4800CDD1D8 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		DC6286A02A6FAF5F00CDD1D8 /* Checkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkout.swift; sourceTree = "<group>"; };
 		DC6286A22A6FAF7300CDD1D8 /* Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Admin.swift; sourceTree = "<group>"; };
-		DCD764492A71F57A0020D2E2 /* Pasta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pasta.swift; sourceTree = "<group>"; };
 		DCD7644B2A7216EC0020D2E2 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,8 +76,6 @@
 				DC6286922A6FAE7500CDD1D8 /* Instances.swift */,
 				DC6286A22A6FAF7300CDD1D8 /* Admin.swift */,
 				DC6286A02A6FAF5F00CDD1D8 /* Checkout.swift */,
-				DC62869E2A6FAF4800CDD1D8 /* Cart.swift */,
-				DCD764492A71F57A0020D2E2 /* Pasta.swift */,
 				DCD7644B2A7216EC0020D2E2 /* Menu.swift */,
 				C0C242A22A729A1600829218 /* MenuInfo.swift */,
 				C0C242A42A72A62000829218 /* Functions.swift */,
@@ -155,8 +149,6 @@
 				DC6286932A6FAE7500CDD1D8 /* Instances.swift in Sources */,
 				C0C242A52A72A62000829218 /* Functions.swift in Sources */,
 				DCD7644C2A7216EC0020D2E2 /* Menu.swift in Sources */,
-				DC62869F2A6FAF4800CDD1D8 /* Cart.swift in Sources */,
-				DCD7644A2A71F57A0020D2E2 /* Pasta.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
