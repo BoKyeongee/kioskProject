@@ -48,16 +48,32 @@ class Functions {
         }
         
         print("\n===============================")
-        let inputNum: Int = getInt(menulist.count) // 숫자 받기
-        let setValue: Set = menulist[inputNum - 1].set // 받은 숫자를 Set값으로 변경
         
-        if menulist[0].set == .food{
-            order(menulist[inputNum - 1].name, menulist[inputNum - 1].price)
-            // 상세 메뉴로 갈 경우 오더로 파라미터 전달
+         // 숫자 받기
+        
+        
+        if menulist[0].set == .food {
+            let range = 1 ... menulist.count
+            let inputNum: Int = getInt(menulist.count + 2)
+            if range.contains(inputNum) == true {
+                order(menulist[inputNum - 1].name, menulist[inputNum - 1].price)
+                // 상세 메뉴로 갈 경우 오더로 파라미터 전달
+            }
+            else if inputNum == menulist.count + 1 {
+                instances.operating.oper(.home)
+            }
+            else {
+                instances.operating.oper(.exit)
+            }
+ 
             return
         }
-        instances.operating.oper(setValue)
-        // 상세 메뉴 아닐 때, Set값으로 oper()속의 switch문 실행
+        else {
+            let inputNum: Int = getInt(menulist.count)
+            let setValue: Set = menulist[inputNum - 1].set
+            instances.operating.oper(setValue)
+            // 상세 메뉴 아닐 때, Set값으로 oper()속의 switch문 실행
+        }
         return
     }
     
