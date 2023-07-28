@@ -43,13 +43,13 @@ class Functions {
         }
         else {
             for i in 0 ..< menulist.count {
-                print("| \(i + 1) |   \(menulist[i].name)")
+                print(" | \(i + 1) |   \(menulist[i].name)")
             }
         }
         
-        print("===============================")
+        print("\n===============================")
         let inputNum: Int = getInt(menulist.count) // 숫자 받기
-        let setValue: Set = menulist[inputNum].set // 받은 숫자를 Set값으로 변경
+        let setValue: Set = menulist[inputNum - 1].set // 받은 숫자를 Set값으로 변경
         
         if menulist[0].set == .food{
             order(menulist[inputNum].name, menulist[inputNum].price)
@@ -65,6 +65,7 @@ class Functions {
     func order(_ menuName: String, _ menuPrice: Int) {
         print("\n[ ADD TO CART ]\n")
         print("\(menuName)를 몇 개 구매하시겠습니까?")
+        print("\n===============================")
         let menuCount: Int = getInt(10000) // stock 내 숫자로 개수 입력
         let cost: Int = menuPrice * menuCount // 해당 메뉴 비용 계산
         
@@ -88,14 +89,14 @@ class Functions {
         print("\n\n[ CART ]\n")
         var total: Int = 0
         
-        guard cartContent.isEmpty == true else {
+        guard cartContent.isEmpty == false else {
             print("장바구니가 비었습니다.")
             displayMenu(instances.productData.emptyCartMenu)
             return
         }
         
         for i in 0 ..< cartContent.count {
-            print("상품명: \(cartContent[i][0])  |   수량: \(cartContent[i][1])  |   가격: \(cartContent[i][2])")
+            print("상품명: \(cartContent[i][0]) ... 수량: \(cartContent[i][1]) ... 가격: \(cartContent[i][2])\n")
             total += cartContent[i][2] as! Int
         }
         displayMenu(instances.productData.cartMenu)

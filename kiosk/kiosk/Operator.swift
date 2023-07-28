@@ -30,7 +30,7 @@ class Operator {
             instances.categories.category(instances.productData.homeMenu)
         case .clearCart :
             instances.functions.cartContent = []
-            instances.functions.viewCart([])
+            instances.functions.viewCart(instances.functions.cartContent)
         case .exit : instances.functions.exit()
         case .orderComplete :
             print("주문이 완료되었습니다.")

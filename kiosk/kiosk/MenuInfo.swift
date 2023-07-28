@@ -9,40 +9,40 @@ import Foundation
 
 class MenuInfo {
     var pizzaMenu : [Menu] = [
-        Menu("치즈 크레이프 샌드 피자", 34900, .food),
-        Menu("아보카도 새우 피자", 27900, .food),
-        Menu("대만 콘 치즈 감자 피자", 17900, .food),
-        Menu("이탈리아 마르게리따 피자", 17900, .food)
+        Menu("CHEESE CREPE SAND PIZZA", 34900, .food),
+        Menu("AVOCADO SHRIMP PIZZA", 27900, .food),
+        Menu("TAIWANESE CORN CHEESE POTATO PIZZA", 17900, .food),
+        Menu("ITALIAN MARGHERITA PIZZA", 17900, .food)
     ]
     
     var pastaMenu : [Menu] = [
-        Menu("불고기 파스타", 8800, .food),
-        Menu("치즈 볼로네즈 파스타", 9800, .food),
-        Menu("치킨 볼 파스타", 9800, .food),
-        Menu("베이컨 파스타", 8800, .food)
+        Menu("BULGOGI PASTA", 8800, .food),
+        Menu("CHEESE BOLOGNESE PASTA", 9800, .food),
+        Menu("CHICKEN BOWL PASTA", 9800, .food),
+        Menu("BACON PASTA", 8800, .food)
     ]
     
     var sideMenu : [Menu] = [
-        Menu("치킨 체다 더티 프라이즈", 4600, .food),
-        Menu("체다 치즈 치킨", 9800, .food),
-        Menu("웨스턴 핫 윙(8조각)", 9800, .food),
-        Menu("허니&갈릭 윙스", 5600, .food),
-        Menu("도미노 코울슬로", 9800, .food)
+        Menu("CHICKEN CHEDDAR DIRTY FRIES", 4600, .food),
+        Menu("CHEDDAR CHEESE CHICKEN", 9800, .food),
+        Menu("WESTERN HOT WING(8pcs.)", 9800, .food),
+        Menu("Honey & Garlic Wings", 5600, .food),
+        Menu("Domino's Coleslaw", 9800, .food)
     ]
     
     var drinkMenu : [Menu] = [
-        Menu("메뉴1", 100, .food),
-        Menu("메뉴2", 100, .food),
-        Menu("메뉴3", 100, .food),
-        Menu("메뉴4", 100, .food),
-        Menu("메뉴15", 100, .food)
+        Menu("COCA COLA", 1500, .food),
+        Menu("PEPSI", 1300, .food),
+        Menu("SPRITE", 1000, .food),
+        Menu("WELCHS", 1100, .food),
+        Menu("WATER", 900, .food)
     ]
     
     var pickkleMenu : [Menu] = [
-        Menu("우리피클 M", 500, .food),
-        Menu("우리피클 L", 800, .food),
-        Menu("갈릭디핑소스", 200, .food),
-        Menu("핫소스", 100, .food),
+        Menu("WOORI PICKKLE M", 500, .food),
+        Menu("WOORI PICKKLE L", 800, .food),
+        Menu("GARLIC DIPPING SAUCE ", 200, .food),
+        Menu("HOT SAUCE", 100, .food),
     ]
     
     var homeMenu : [Menu] = [
