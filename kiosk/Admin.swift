@@ -61,18 +61,58 @@ class Admin {
             showMenu(instances.productData.pastaMenu)
             let menuNum = instances.functions.getInt(instances.productData.pastaMenu.count)
             print("이름 : \(instances.productData.pastaMenu[menuNum-1].name) 가격 : \((instances.productData.pastaMenu[menuNum-1].price)) ")
+            print("수정할 메뉴 이름을 입력하세요 (아무것도 입력하지 않을 시 변경되지 않습니다.)")
+            let newName = getName()
+            print("수정할 메뉴 가격을 입력하세요 (아무것도 입력하지 않을 시 변경되지 않습니다.)")
+            let newPrice = getPrice()
+            if newName != "" {
+                instances.productData.pastaMenu[menuNum - 1].name = newName
+            }
+            if newPrice != -1 {
+                instances.productData.pastaMenu[menuNum - 1].price = newPrice
+            }
         case 3:
             showMenu(instances.productData.sideMenu)
             let menuNum = instances.functions.getInt(instances.productData.sideMenu.count)
             print("이름 : \(instances.productData.sideMenu[menuNum-1].name) 가격 : \((instances.productData.sideMenu[menuNum-1].price)) ")
+            print("수정할 메뉴 이름을 입력하세요 (아무것도 입력하지 않을 시 변경되지 않습니다.)")
+            let newName = getName()
+            print("수정할 메뉴 가격을 입력하세요 (아무것도 입력하지 않을 시 변경되지 않습니다.)")
+            let newPrice = getPrice()
+            if newName != "" {
+                instances.productData.sideMenu[menuNum - 1].name = newName
+            }
+            if newPrice != -1 {
+                instances.productData.sideMenu[menuNum - 1].price = newPrice
+            }
         case 4:
             showMenu(instances.productData.drinkMenu)
             let menuNum = instances.functions.getInt(instances.productData.drinkMenu.count)
             print("이름 : \(instances.productData.drinkMenu[menuNum-1].name) 가격 : \((instances.productData.drinkMenu[menuNum-1].price)) ")
+            print("수정할 메뉴 이름을 입력하세요 (아무것도 입력하지 않을 시 변경되지 않습니다.)")
+            let newName = getName()
+            print("수정할 메뉴 가격을 입력하세요 (아무것도 입력하지 않을 시 변경되지 않습니다.)")
+            let newPrice = getPrice()
+            if newName != "" {
+                instances.productData.drinkMenu[menuNum - 1].name = newName
+            }
+            if newPrice != -1 {
+                instances.productData.drinkMenu[menuNum - 1].price = newPrice
+            }
         case 5:
             showMenu(instances.productData.pickkleMenu)
             let menuNum = instances.functions.getInt(instances.productData.pickkleMenu.count)
             print("이름 : \(instances.productData.pickkleMenu[menuNum-1].name) 가격 : \((instances.productData.pickkleMenu[menuNum-1].price)) ")
+            print("수정할 메뉴 이름을 입력하세요 (아무것도 입력하지 않을 시 변경되지 않습니다.)")
+            let newName = getName()
+            print("수정할 메뉴 가격을 입력하세요 (아무것도 입력하지 않을 시 변경되지 않습니다.)")
+            let newPrice = getPrice()
+            if newName != "" {
+                instances.productData.pickkleMenu[menuNum - 1].name = newName
+            }
+            if newPrice != -1 {
+                instances.productData.pickkleMenu[menuNum - 1].price = newPrice
+            }
         default: instances.categories.category(instances.productData.homeMenu)
         }
         instances.categories.category(instances.productData.homeMenu)
