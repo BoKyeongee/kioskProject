@@ -52,7 +52,7 @@ class Functions {
         let setValue: Set = menulist[inputNum - 1].set // 받은 숫자를 Set값으로 변경
         
         if menulist[0].set == .food{
-            order(menulist[inputNum].name, menulist[inputNum].price)
+            order(menulist[inputNum - 1].name, menulist[inputNum - 1].price)
             // 상세 메뉴로 갈 경우 오더로 파라미터 전달
             return
         }
@@ -70,6 +70,7 @@ class Functions {
         let cost: Int = menuPrice * menuCount // 해당 메뉴 비용 계산
         
         cartContent.append([menuName, menuCount, cost])
+        instances.checkout.cartContent = cartContent
         
         guard cartContent.count == 1 else{
             for i in 0 ..< cartContent.count - 1 {
@@ -85,8 +86,9 @@ class Functions {
         return
     }
     
-    func viewCart(_ cartContent: [[Any]]) {
-        print("\n\n[ CART ]\n")
+    func viewCart(_ cartContent: [[Any]], typeNumb: Int? = 0) { // 카트 보여질 때
+        typeNumb == 0 ? print("\n\n[ CART ]\n") : print("[ Orders ]\n")
+        
         var total: Int = 0
         
         guard cartContent.isEmpty == false else {
@@ -96,11 +98,30 @@ class Functions {
         }
         
         for i in 0 ..< cartContent.count {
-            print("상품명: \(cartContent[i][0]) ... 수량: \(cartContent[i][1]) ... 가격: \(cartContent[i][2])\n")
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .decimal
+            
+            // 지폐 단위로 가격 변경
+            let priceFormat = numberFormatter.string(from: cartContent[i][2] as! NSNumber) ?? ""
+            print("상품명: \(cartContent[i][0])  |   수량: \(cartContent[i][1])  |   가격: \(String(describing: priceFormat))")
             total += cartContent[i][2] as! Int
         }
-        displayMenu(instances.productData.cartMenu)
+        typeNumb == 0 ? displayMenu(instances.productData.cartMenu) : buy(total)
         return
     }
-   
+    
+    func buy(_ total: Int) { // 구매 시
+        
+        print("\n[ Total ]\n")
+        
+        // 화폐 단위로 변경
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        
+        print(numberFormatter.string(from: total as NSNumber) ?? 0)
+        
+        print("구매가 완료되었습니다.")
+        
+        instances.main.main() // 홈으로
+    }
 }

@@ -14,7 +14,7 @@ class Instances {
     let operating = Operator()
     
     // 기본 메뉴
-//    let checkout = Checkout()
+    let checkout = Checkout()
     let toAdmin = Admin()
     
     // 기능 접근 시
